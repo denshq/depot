@@ -1,0 +1,38 @@
+@import "functions";
+@import "pallete";
+
+h1 {
+  font-family: 'PT Sans Narrow';
+}
+
+h2 {
+  font-family: 'PT Sans Narrow';
+}
+
+.button {
+  text-decoration: none;
+  padding: 0.7em;   /* 16/16px */
+  font-weight: bold;
+  border-radius: em(5);
+  cursor: pointer;
+}
+
+.button-green {
+  background: $middle-green;
+  color: white;
+}
+
+input:not([type=submit]):not([type=file]), textarea{ 
+  border-radius: em(10);
+  padding: em(10);
+  margin: 0 0 em(20) 0;
+  border: none;
+  border: 1px solid $light-green;
+}
+
+input[type="submit"]{
+  -webkit-box-shadow: none; 
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border: none;
+}

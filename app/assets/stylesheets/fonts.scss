@@ -1,0 +1,22 @@
+@mixin font-build($name, $file_name, $path, $weight: normal, $style: normal) {
+  @font-face{
+    font-family: $name;
+    src: url('#{$path}#{$file_name}.eot'); /* IE9 Compat Modes */
+    src: url('#{$path}#{$file_name}?iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('#{$path}#{$file_name}.woff2') format('woff2'), /* Super Modern Browsers */
+         url('#{$path}#{$file_name}.woff') format('woff'), /* Pretty Modern Browsers */
+         url('#{$path}#{$file_name}.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('#{$path}#{$file_name}.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+$fonts_path: '';
+
+@include font-build($name: 'PT Sans Narrow', $path: $fonts_path, $file_name: 'pt_sans_narrow');
+@includr font-build($name: 'PT Sans Narrow', $path: $fonts_path, $file_name: 'pt_sans_narrow_bold', $weight: bold);
+@include font-build($name: 'PT Sans', $path: $fonts_path, $file_name: 'pt_sans');
+@include font-build($name: 'PT Sans', $path: $fonts_path, $file_name: 'pt_sans_italic', $style: italic);
+@include font-build($name: 'PT Sans', $path: $fonts_path, $file_name: 'pt_sans_bold', $style: normal, $weight: bold);
+@include font-build($name: 'PT Sans', $path: $fonts_path, $file_name: 'pt_sans_bold_italic', $style: italic, $weight: bold);
