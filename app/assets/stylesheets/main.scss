@@ -43,3 +43,73 @@ input[type="submit"]{
   box-shadow: none;
   border: none;
 }
+
+.banner {
+  position: relative;
+  min-height: 40px;
+  background: $light-green;
+  padding: 10px;
+  border-bottom: 2px solid $dark-green;
+  color: white;
+  .logo {
+    margin-left: 1em;
+    width: 192px;
+  }
+}
+
+.notice {
+  color: #000;
+  border: 2px solid $red;
+  padding: 1em;
+  margin-bottom: 2em;
+  background-color: $ultra-light-brown;
+}
+
+.notice:empty {
+  display: none;
+}
+
+.columns {
+  background: $light-green;
+  display: flex;
+
+  .main {
+    padding: 1em;
+    background: white;
+    flex: 1;
+  }
+
+  .side {
+    padding: 1em 2em;
+    background: $light-green;
+
+    ul {
+      padding: 0;
+
+      li {
+        list-style: none;
+
+        a {
+          color: white;
+          font-size: small;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 800px) {
+  .columns {
+    flex-direction: column-reverse;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .banner {
+    height: 1em;
+  }
+
+  .banner .title {
+    display: none;
+  }
+}
