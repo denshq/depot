@@ -3,11 +3,20 @@
 one:
   title: MyString
   description: MyText
-  image_url: MyString
+  image_url: test.jpg
   price: 9.99
 
 two:
   title: MyString
   description: MyText
-  image_url: MyString
+  image_url: test.jpg
   price: 9.99
+
+corsair:
+  title: Corsair CX750 v2 80+ Bronze 750 Watt
+  description: 
+    750 Watt, ATX, активныйPFC 8x SATA, 8x Molex 2x PCIe 8-конактн., 
+    2x PCIe 6-конактн. активныйэл. кулер, 
+    1x 120 mm Вентилятор 80 PLUS Bronze сертификат Маркировка и укладка кабелей 
+  price: 73.94
+  image_url: corsair_cx750v2.jpg

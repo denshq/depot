@@ -9,12 +9,19 @@ h2 {
   font-family: 'PT Sans Narrow';
 }
 
+form {
+  label {
+    display: block;
+  }
+}
+
 .button {
   text-decoration: none;
   padding: 0.7em;   /* 16/16px */
   font-weight: bold;
   border-radius: em(5);
   cursor: pointer;
+  display: inline;
 }
 
 .button-green {
