@@ -29,21 +29,26 @@
       color: $middle-blue;
     }
 
-    p, div.price_line {
+    p, div.price-line {
       margin-left: 100px;
       margin-top: 0.5em;
       margin-bottom: 0.8em;
+      form, div {
+        display: inline;
+      }
+    }
+
+    .price-button {
+      float: right;
     }
 
     .price {
       color: $middle-green;
       font-weight: bold;
-      margin-right: 3em;
+      display: inline-block;
       .fas {
         margin-left: 2px;
-        padding-bottom: -2px;
-        transform: scale(0.78);
-        vertical-align: top;
+        font-size: em(14);
       }
     }
   }

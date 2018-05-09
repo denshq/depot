@@ -46,3 +46,17 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+input:not([type=submit]):not([type=file]), textarea{ 
+  border-radius: em(10);
+  padding: em(10);
+  margin: 0 0 em(20) 0;
+  border: none;
+}
+
+input[type="submit"]{
+  -webkit-box-shadow: none; 
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border: none;
+}
