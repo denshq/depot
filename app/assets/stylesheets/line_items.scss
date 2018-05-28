@@ -1,0 +1,14 @@
+@import "pallete";
+
+@keyframes line-item-highlight {
+  0% {
+    background: $light-blue;
+  }
+  100% {
+    background: none;
+  }
+}
+
+.line-item-highlight {
+  animation: line-item-highlight 1s;
+}

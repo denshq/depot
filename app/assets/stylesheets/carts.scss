@@ -1,0 +1,18 @@
+@import "pallete";
+
+.carts {
+  .item_price, .total_line {
+    text-align: right;
+  }
+
+  td {
+    padding-bottom: 10px;
+    padding-right: 10px;
+  }
+
+  .total_line, .total_cell {
+    font-weight: bold;
+    border-top: 1px solid $dark-green;
+    padding-top: 5px;
+  }
+}

@@ -2,54 +2,67 @@
 @import "functions";
 
 .store {
+  max-width: 80em;
   h1 {
     margin: 0;
-    color: $dark-blue;
-    border-bottom: 3px dotted $middle-blue;
+    color: $text-color;
   }
 
   /* An entry in the store catalog */
-  .entry {
-    overflow: auto;
-    margin-top: 1em;
-    border-bottom: 1px dotted $middle-blue;
-    min-height: 100px;
+  ul.catalog {
+    border-top: solid 0.250em;
+    list-style: none;
+    padding: none;
+    margin: 0;
 
-    img {
-      width: 80px;
-      margin-right: 5px;
-      margin-bottom: 5px;
-      position: absolute;
-    }
+    li {
+      padding: 1em;
+      margin: 0;
+      border-bottom: solid thin #ddd;
 
-    h3 {
-      margin-left: 100px;
-      margin-top: 0;
-      margin-bottom: 2px;
-      color: $middle-blue;
-    }
-
-    p, div.price-line {
-      margin-left: 100px;
-      margin-top: 0.5em;
-      margin-bottom: 0.8em;
-      form, div {
-        display: inline;
+      // This makes sure our <li> has enough height
+      // to hold the entire image, since it's floated
+      &::after {
+        clear: both;
+        content: " ";
+        display: block;
       }
-    }
 
-    .price-button {
-      float: right;
-    }
-
-    .price {
-      color: $middle-green;
-      font-weight: bold;
-      display: inline-block;
-      .fas {
-        margin-left: 2px;
-        font-size: em(14);
+      img {
+        float: left;
+        padding: 1em;
+        width: 100px;
+        margin-right: 1em;
+        margin-bottom: 1em;
       }
-    }
-  }
+
+      h3 {
+        color: $middle-blue;
+      }
+
+      p, div.price-line {
+        margin-left: 100px;
+        margin-top: 0.5em;
+        margin-bottom: 0.8em;
+        form, div {
+          display: inline;
+        }
+      }
+
+      .price-button {
+        float: right;
+      }
+
+      .price {
+        color: $middle-green;
+        font-weight: bold;
+        display: inline-block;
+        font-size: 1.414em;
+        .fas {
+          margin-left: 2px;
+          font-size: em(14);
+        }
+      }  // .price
+    } // li  
+  } // ul
 }
