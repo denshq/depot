@@ -67,6 +67,8 @@ class OrdersController < ApplicationController
     end
   end
 
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_order
@@ -81,6 +83,18 @@ class OrdersController < ApplicationController
     def ensure_cart_isnt_empty
       if @cart.line_items.empty?
         redirect_to store_index_url, notice: 'Your cart is empty'
+      end
+    end
+
+    def pay_type_params
+      if order_params[:pay_type] == "Credit"
+        params.require(:order).permit(:credit_card_number, :explanation_date)
+      elsif order_params[:pay_type] == "Check"
+        params.require(:order).permit(:routing_number, :account_number)
+      elsif order.params[:pay_type] == "Purchase Order"
+        params.require(:order).permit(:po_number)
+      else
+        {}
       end
     end
 end

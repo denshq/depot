@@ -5,6 +5,24 @@ class OrdersTest < ApplicationSystemTestCase
     @order = orders(:one)
   end
 
+  test "check routing number" do
+    visit store_index_url
+
+    first('.catalog li').click_on 'Add to Cart'
+
+    click_on 'Checkout'
+
+    fill_in 'order_name', with: 'Stan Marshall'
+    fill_in 'order_address', with: '123 Lenin Street'
+    fill_in 'order_email', with: 'corsair@gmail.com'
+
+    assert_no_selector "#order_routing_number"
+
+    select 'Check', from: 'pay_type'
+
+    assert_selector "#order_routing_number"
+  end
+
   test "visiting the index" do
     visit orders_url
     assert_selector "h1", text: "Orders"
